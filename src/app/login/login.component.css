@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-container {
+  width: 25%;
+  margin-top: 8rem;
+  padding: 4rem 6rem;
+  border-radius: .5rem;
+}
+
+.input-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+}

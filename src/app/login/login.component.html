@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="login-container">
+    <form [formGroup]="user">
+      <div class="input-field">
+        <label>E-post</label>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Skriv inn E-post" required>
+            <mat-error>Skriv inn E-posten dinn</mat-error>
+          </mat-form-field>
+      </div>
+      <div class="input-field">
+        <label>Passord</label>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Skriv inn Passord" required>
+            <mat-error>Skriv inn Passord</mat-error>
+          </mat-form-field>
+      </div>
+      <button class="btn" type="submit" mat-raised-button color="accent" (click)="login()">Logg inn</button>
+    </form>
+  </div>
+
+  <p><a href="">Gøymt passordet?</a></p>
+  <p><a href="">Registrer meg som ny brukar</a></p>
+
+</div>
