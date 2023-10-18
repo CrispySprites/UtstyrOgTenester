@@ -1,0 +1,29 @@
+.topbar {
+  display: flex;
+  gap: 1%;
+}
+
+.subbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+a{
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+a:hover{
+  filter: brightness(80%);
+  transform: scale(1.1);
+}
+
