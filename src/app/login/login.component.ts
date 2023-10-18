@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserDto } from '../interfaces/UserDto';
 import { AuthService } from '../services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -14,21 +15,29 @@ export class LoginComponent {
   constructor(
     private api: AuthService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private _snackBar: MatSnackBar
   ) {}
 
   user: FormGroup = this.fb.group<UserDto>({
     email: "",
     password: ""
   })
+  errorMessage: string = "";
+
+  hide = true;
 
   login() {
     if (this.user.valid){
       this.api.login(this.user.value).subscribe(r => {
         if(r.error !== undefined){
           console.log(r.error)
+          this.errorMessage = r.error.message;
         } else {
-          this.router.navigate(['']);
+          window.location.reload()
+          this._snackBar.open("Logger inn", "Okay", {
+            duration: 3000
+          });
         }
       })
     }

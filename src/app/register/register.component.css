@@ -5,8 +5,7 @@
   flex-direction: column;
 }
 
-.login-container {
-  padding: 4rem 0rem;
+.content {
   width: 90%;
   border-radius: .5rem;
 }
@@ -17,12 +16,16 @@
 
 .btn {
   width: 100%;
-  margin-bottom: 1rem;
+}
+
+.bottom-text {
+  padding: 2rem;
+  text-align: center;
 }
 
 @media (min-width: 40rem){
-  .login-container {
-    margin-top: 8rem;
+  .content {
+    margin-top: 4rem;
     padding: 4rem 6rem;
     width: 30%;
   }

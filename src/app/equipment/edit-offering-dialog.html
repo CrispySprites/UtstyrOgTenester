@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Utstyr / teneste</h1>
+<div mat-dialog-content class="dialog">
+  <mat-form-field class="input-field">
+    <mat-label>namn</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="input-field">
+    <mat-label>Beskriving</mat-label>
+    <input matInput [(ngModel)]="data.description">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="input-field">
+    <mat-label>Select</mat-label>
+    <mat-select [(ngModel)]="data.type">
+      <mat-option value="Utstyr">Utstyr</mat-option>
+      <mat-option value="Teneste">Teneste</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="input-field">
+    <mat-label>Innkjøpt</mat-label>
+    <input matInput [(ngModel)]="data.stock">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">avbrytt</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Lagre</button>
+</div>

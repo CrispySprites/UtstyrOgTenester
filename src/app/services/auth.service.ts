@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { tap, catchError, map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { UserDto } from '../interfaces/UserDto';
+import { NewUserDto } from '../interfaces/NewUserDto';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,22 @@ export class AuthService {
       })
     );
 
+  }
+
+  register(newUserDto: NewUserDto) {
+    const json = {
+      email: newUserDto.email,
+      name: newUserDto.name,
+      password: newUserDto.password,
+      confirmPassword: newUserDto.confirmPassword
+    }
+    return this.http.post<NewUserDto>(this.apiUrl + 'Register', json).pipe(
+      tap((_) => this.log('register user')),
+      catchError(this.handleError<any>('register')),
+      map((response) => {
+        return response;
+      })
+    );
   }
 
   getToken() {

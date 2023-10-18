@@ -14,13 +14,27 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import { RegisterComponent } from './register/register.component';
+import {MatIconModule} from '@angular/material/icon';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { HomeComponent } from './home/home.component';
+import {MatTableModule} from '@angular/material/table';
+import { EquipmentComponent } from './equipment/equipment.component';
+import { ServicesPageComponent } from './services-page/services-page.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    EquipmentComponent,
+    ServicesPageComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +46,12 @@ import {MatButtonModule} from '@angular/material/button';
     ReactiveFormsModule,
     FormsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatTableModule,
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

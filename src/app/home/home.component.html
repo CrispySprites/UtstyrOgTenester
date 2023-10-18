@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="content">
+    <div class="info-box">
+      <p>Utstyr og tenester tilbyr utleige av utstyr og tenester tilknytt ustyrsutleiga.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="table-container">
+      <div class="table">
+        <table mat-table [dataSource]="equipment">
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Utstyr til utleige. </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <div class="table">
+        <table mat-table [dataSource]="services">
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Tenester vi tilbyr</th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
