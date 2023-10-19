@@ -3,6 +3,6 @@ export class Offerings {
   name = "";
   description = "";
   stock = "";
-  type = "";
+  type = 0;
   author?: string;
 }

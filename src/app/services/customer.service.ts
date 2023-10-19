@@ -10,20 +10,20 @@ import { Offerings } from '../models/offerings';
 })
 export class CustomerService {
 
-  apiUrl = environment.apiUrl + 'Offerings';
+  apiUrl = environment.apiUrl + 'Customer';
   constructor(private http: HttpClient) {
   }
 
-  public getAll(): Observable<Customer[]> {
+  public get(): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.apiUrl + "/getAll");
   }
-  public addOffering(customer: Customer): Observable<Customer> {
+  public add(customer: Customer): Observable<Customer> {
     return this.http.post<Customer>(this.apiUrl, customer);
   }
-  public editOffering(customer: Offerings): Observable<Customer> {
+  public edit(customer: Offerings): Observable<Customer> {
     return this.http.put<Customer>(this.apiUrl, customer);
   }
-  public deleteOffering(customer: Customer): Observable<Customer> {
+  public delete(customer: Customer): Observable<Customer> {
     return this.http.delete<Customer>(`${this.apiUrl}/${customer.id}`);
   }
 }

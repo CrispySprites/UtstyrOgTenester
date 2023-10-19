@@ -23,6 +23,11 @@ import { EquipmentComponent } from './equipment/equipment.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import { AboutComponent } from './about/about.component';
+import { CustomerComponent } from './customer/customer.component';
+import { RentalAgreemntComponent } from './rental-agreemnt/rental-agreemnt.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -34,7 +39,10 @@ import {MatSelectModule} from '@angular/material/select';
     RegisterComponent,
     HomeComponent,
     EquipmentComponent,
-    ServicesPageComponent
+    ServicesPageComponent,
+    AboutComponent,
+    CustomerComponent,
+    RentalAgreemntComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +59,12 @@ import {MatSelectModule} from '@angular/material/select';
     MatSnackBarModule,
     MatTableModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
+    MatDatepickerModule,
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
   ],
   bootstrap: [AppComponent]

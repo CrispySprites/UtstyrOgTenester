@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api-crispy-iwt.azurewebsites.net/api/'
+  apiUrl: 'https://app-staf-api-utstyr-og-tenester.azurewebsites.net'
 };

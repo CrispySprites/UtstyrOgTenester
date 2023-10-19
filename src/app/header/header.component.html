@@ -11,7 +11,9 @@
     <ul>
       <li><a routerLink="../Heim">Heim</a></li>
       <li><a routerLink="../Utstyr">Utstyr</a></li>
-      <li><a routerLink="../Utvikling-tenester">Utvikling/tenester</a></li>
+      <li><a routerLink="../Tenester">Utvikling/tenester</a></li>
+      <li *ngIf="isLoggedIn()"><a routerLink="../Kundar">Kundar</a></li>
+      <li *ngIf="isLoggedIn()"><a routerLink="../Utleige">Utleige</a></li>
       <li><a routerLink="../Om-oss">Om oss</a></li>
     </ul>
     <ul *ngIf="!isLoggedIn()">

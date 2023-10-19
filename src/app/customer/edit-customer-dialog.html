@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Kunderegister</h1>
+<div mat-dialog-content class="dialog">
+  <mat-form-field class="input-field">
+    <mat-label>Namn</mat-label>
+    <input matInput [(ngModel)]="data.name" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="input-field">
+    <mat-label>Beskriving</mat-label>
+    <input matInput [(ngModel)]="data.address" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="input-field">
+    <mat-label>Telefon</mat-label>
+    <input matInput [(ngModel)]="data.phone" required>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">avbrytt</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Lagre</button>
+</div>

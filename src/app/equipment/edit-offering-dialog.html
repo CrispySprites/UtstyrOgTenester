@@ -1,27 +1,30 @@
 <h1 mat-dialog-title>Utstyr / teneste</h1>
 <div mat-dialog-content class="dialog">
   <mat-form-field class="input-field">
-    <mat-label>namn</mat-label>
-    <input matInput [(ngModel)]="data.name">
+    <mat-label>Namn</mat-label>
+    <input matInput [(ngModel)]="data.name" required>
   </mat-form-field>
   <br>
   <mat-form-field class="input-field">
     <mat-label>Beskriving</mat-label>
-    <input matInput [(ngModel)]="data.description">
+    <input matInput [(ngModel)]="data.description" required>
   </mat-form-field>
   <br>
   <mat-form-field class="input-field">
-    <mat-label>Select</mat-label>
-    <mat-select [(ngModel)]="data.type">
-      <mat-option value="Utstyr">Utstyr</mat-option>
-      <mat-option value="Teneste">Teneste</mat-option>
+    <mat-label>Velg type</mat-label>
+    <mat-select [(ngModel)]="data.type" required >
+      <mat-option [value]="0">Utstyr</mat-option>
+      <mat-option [value]="1">Teneste</mat-option>
     </mat-select>
   </mat-form-field>
   <br>
   <mat-form-field class="input-field">
     <mat-label>Innkjøpt</mat-label>
-    <input matInput [(ngModel)]="data.stock">
+    <input type="number" matInput [(ngModel)]="data.stock" required>
   </mat-form-field>
+  <div *ngIf="data.author !== undefined">
+    <p>Registrert av {{data.author}}</p>
+  </div>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">avbrytt</button>

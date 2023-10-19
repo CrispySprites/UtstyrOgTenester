@@ -35,6 +35,7 @@ export class LoginComponent {
           this.errorMessage = r.error.message;
         } else {
           window.location.reload()
+          this.router.navigate([''])
           this._snackBar.open("Logger inn", "Okay", {
             duration: 3000
           });

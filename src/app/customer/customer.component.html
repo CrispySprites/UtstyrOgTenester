@@ -6,20 +6,20 @@
     </div>
     <div class="table-container">
       <div class="table">
-        <table mat-table [dataSource]="equipment">
+        <table mat-table [dataSource]="customer">
           <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Utstyr til leige</th>
+            <th mat-header-cell *matHeaderCellDef> Namn</th>
             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
           </ng-container>
 
-          <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef> Modell</th>
-            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef> Adresse</th>
+            <td mat-cell *matCellDef="let element"> {{element.address}} </td>
           </ng-container>
 
-          <ng-container matColumnDef="stock">
-            <th mat-header-cell *matHeaderCellDef> Antal</th>
-            <td mat-cell *matCellDef="let element"> {{element.stock}} </td>
+          <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef> Telefon</th>
+            <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
           </ng-container>
 
           <ng-container matColumnDef="options" >
@@ -27,7 +27,7 @@
             <td mat-cell *matCellDef="let element">
               <div *ngIf="isLoggedIn()">
                 <button class="btn" mat-raised-button color="accent" (click)="openDialog(element)">Rediger</button>
-                <button class="btn" mat-raised-button color="warn" (click)="deleteOffering(element)">Slett</button>
+                <button class="btn" mat-raised-button color="warn" (click)="deleteCustomer(element)">Slett</button>
               </div>
             </td>
           </ng-container>
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="btn-container" *ngIf="isLoggedIn()">
-      <button class="btn" mat-raised-button color="accent" (click)="openDialog(creatNewOffering())">Legg til nytt utstyr eller ny teneste</button>
+      <button class="btn" mat-raised-button color="accent" (click)="openDialog(creatNewCustomer())">Legg til nytt kunde</button>
     </div>
   </div>
 </div>
